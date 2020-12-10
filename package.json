@@ -1,0 +1,15 @@
+{
+  "name": "wasm-testing",
+  "version": "1.0.0",
+  "description": "Tester webassembly",
+  "main": "index.js",
+  "scripts": {
+    "build": "wa compile -o test.wasm test.c",
+    "start": "node test.js"
+  },
+  "author": "Sigurd H Tullander",
+  "license": "ISC",
+  "dependencies": {
+    "webassembly": "^0.11.0"
+  }
+}

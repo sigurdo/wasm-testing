@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <!-- <script>
+            const importObject = {
+                env: {
+                    memory: new WebAssembly.Memory({initial:10, maximum:100})
+                }
+            };
+            WebAssembly.instantiateStreaming(fetch('test.wasm'), importObject).then(module => {
+                console.log('yoyo');
+                const test = module.instance.exports;
+                document.write(test.add(3, 15));
+            });
+        </script> -->
+        <script src="node_modules/webassembly/dist/webassembly.min.js"></script>
+        <script>
+            let printingg = tall => console.log('printing:', tall);
+            webassembly.load('test.wasm', { imports: { printing: printingg}}).then(module => {
+                printingg = string => console.log('printing2:', module.memory.getString(string));
+                document.write(module.exports.add(124, 456));
+            });
+        </script>
+    </body>
+</html>
